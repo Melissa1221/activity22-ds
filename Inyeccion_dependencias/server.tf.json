@@ -1,0 +1,20 @@
+{
+    "resource": {
+        "null_resource": {
+            "server": {
+                "provisioner": [
+                    {
+                        "local-exec": {
+                            "command": "echo 'Server hello-world' && echo '  usa red: hello-local-network' && echo '  IP asignada: 10.0.0.5'"
+                        }
+                    }
+                ],
+                "triggers": {
+                    "name": "hello-world",
+                    "network_ip": "10.0.0.5",
+                    "subnetwork": "hello-local-network"
+                }
+            }
+        }
+    }
+}
