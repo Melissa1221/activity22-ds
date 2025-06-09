@@ -5,14 +5,19 @@
                 "provisioner": [
                     {
                         "local-exec": {
-                            "command": "echo 'Server hello-world' && echo '  usa red: hello-local-network' && echo '  IP asignada: 10.0.0.5'"
+                            "command": "echo 'Server web-server-prod' && echo '  Descripci\u00f3n: Servidor web principal para aplicaci\u00f3n de producci\u00f3n' && echo '  Tipo: small' && echo '  Entorno: production' && echo '  Propietario: backend-team' && echo '  Red: hello-local-network' && echo '  IP asignada: 10.0.0.5' && echo '  Etiquetas: {\"Environment\": \"production\", \"Team\": \"backend\", \"Application\": \"web-service\", \"Backup\": \"daily\", \"Monitoring\": \"enabled\"}'"
                         }
                     }
                 ],
                 "triggers": {
-                    "name": "hello-world",
+                    "description": "Servidor web principal para aplicaci\u00f3n de producci\u00f3n",
+                    "environment": "production",
+                    "instance_type": "small",
+                    "name": "web-server-prod",
                     "network_ip": "10.0.0.5",
-                    "subnetwork": "hello-local-network"
+                    "owner": "backend-team",
+                    "subnetwork": "hello-local-network",
+                    "tags": "{\"Application\": \"web-service\", \"Backup\": \"daily\", \"Environment\": \"production\", \"Monitoring\": \"enabled\", \"Team\": \"backend\"}"
                 }
             }
         }
